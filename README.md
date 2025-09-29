@@ -6,14 +6,14 @@ Context-aware Q&A over a local medical knowledge base using FAISS vector search 
 
 </div>
 
-## 🧠 Overview
+## Overview
 This project implements a Retrieval-Augmented Generation (RAG) pipeline that lets you ask medical questions grounded in a curated PDF knowledge base (e.g. an encyclopedia of medicine). Instead of hallucinating, the LLM is constrained by retrieved passages from a FAISS vector store built from your documents.
 
 Two primary entry points:
 - `connect_memory_with_llm.py` – CLI prototype using a HuggingFace Inference endpoint (e.g. Mistral 7B Instruct).
 - `medibot.py` – Streamlit chat UI using a Groq-hosted model (Llama 4 Maverick) with retrieval.
 
-## ✨ Key Features
+## Key Features
 - FAISS vector store for fast semantic retrieval
 - SentenceTransformer embeddings (`all-MiniLM-L6-v2`) – switchable to remote API mode
 - Modular prompt template injection
@@ -21,7 +21,7 @@ Two primary entry points:
 - Source document traceability (shows which chunks supported the answer)
 - Caching of vector store + embeddings via Streamlit resource cache
 
-## 🏗 Architecture
+## Architecture
 ```
 PDF(s) --> Text Splitter --> Embeddings --> FAISS Index (vectorstore/db_faiss)
 								│
